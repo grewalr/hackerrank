@@ -17,42 +17,28 @@ class CountingValleys {
 
     public static int countingValleys(int steps, String path) {
         // Write your code here
-        int seaLevel = 0;
         int level = 0;
+        int valley = 0;
 
         for (int i = 0; i < steps; i++) {
             if (path.charAt(i) == 'U') level++;
             if (path.charAt(i) == 'D') level--;
+            // if we just come up from valley
+            if (level == 0 && path.charAt(i) == 'U') valley++;
         }
 
-        return -1;
+
+
+        return valley;
 
     }
 
     public static void main(String[] args) throws IOException {
-        List<Integer> array = new ArrayList<>();
-        array.add(0);
-        array.add(1);
-        array.add(0);
-        array.add(0);
-        array.add(0);
-        array.add(1);
-        array.add(0);
-
-        List<Integer> array2 = new ArrayList<>();
-        array2.add(0);
-        array2.add(0);
-        array2.add(1);
-        array2.add(0);
-        array2.add(0);
-        array2.add(1);
-        array2.add(0);
-
-        int result = CountingValleys.jumpingOnClouds(array);
-        System.out.println(result);
-
-        int result2 = CountingValleys.jumpingOnClouds(array2);
-        System.out.println(result2);
+//        int result = CountingValleys.countingValleys();
+//        System.out.println(result);
+//
+//        int result2 = CountingValleys.countingValleys();
+//        System.out.println(result2);
 
     }
 }
